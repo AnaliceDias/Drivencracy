@@ -1,0 +1,28 @@
+{
+  "name": "drivencracy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "npx nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnaliceDias/Projeto-de-recupera-o---Drivencracy.git"
+  },
+  "author": "AnaliceDias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnaliceDias/Projeto-de-recupera-o---Drivencracy/issues"
+  },
+  "homepage": "https://github.com/AnaliceDias/Projeto-de-recupera-o---Drivencracy#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongodb": "^4.6.0"
+  }
+}
