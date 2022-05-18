@@ -1,5 +1,11 @@
 import app from "./src/app/index.js";
+import dotenv from "dotenv";
 
-app.listen(5000 , () => {
+dotenv.config();
+
+const PORTA = process.env.PORTA;
+
+
+app.listen(PORTA , () => {
     console.log("Servidor no ar: http://localhost:5000");
 });
