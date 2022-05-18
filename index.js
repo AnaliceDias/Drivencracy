@@ -7,5 +7,5 @@ const PORTA = process.env.PORTA;
 
 
 app.listen(PORTA , () => {
-    console.log("Servidor no ar: http://localhost:5000");
+    console.log(`Servidor no ar: http://localhost:5000`);
 });

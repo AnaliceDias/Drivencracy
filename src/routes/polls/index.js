@@ -1,12 +1,13 @@
 //Configurações das rotas de poll
 import { Router } from "express";
-import { getPolls, postPolls } from "../../controllers/pollsController.js";
+import { cadastrarEnquete, postPolls } from "../../controllers/pollsController.js";
+import { validaExpireAt, validaTitulo } from "../../middlewares/pollMiddleware.js";
 
 const pollsRouter = Router();
 
-pollsRouter.get("/poll" , getPolls);
-pollsRouter.post("/poll" , postPolls)
-pollsRouter.get("/poll/:id/choice" ,getPolls);
-pollsRouter.get("/poll/:id/result", getPolls);
+pollsRouter.get("/poll" , validaTitulo, validaExpireAt , cadastrarEnquete);
+pollsRouter.post("/poll" , postPolls);
+pollsRouter.get("/poll/:id/choice" , postPolls);
+pollsRouter.get("/poll/:id/result", postPolls);
 
 export default pollsRouter;

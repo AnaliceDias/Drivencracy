@@ -1,19 +1,17 @@
 import connectMongoDB from "../../mongoConection.js";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const { banco_dados } = await connectMongoDB();
 
 
+export async function cadastrarEnquete(req, res){
+    const enquete = req.body;
     
-// enquetes.then((r) => {
-//     console.log(`Sou uma resposta: ${r}`);
-// })
-
-export async function getPolls(req, res){
-    const enquetes =  banco_dados.collection("enquetes").find({}).toArray();
-    enquetes.then((r) => {
+    const inserirEnquetes = banco_dados.collection("enquetes").insertOne(enquete);
+    inserirEnquetes.then((r) => {
+        res.status(201).send("Enquete cadastrada com sucesso");
+    })
+    const buscarEnquetes =  banco_dados.collection("enquetes").find({}).toArray();
+    buscarEnquetes.then((r) => {
         console.log(r);
     })
     res.send("OK_GET");
