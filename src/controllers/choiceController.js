@@ -16,5 +16,14 @@ export async function criarOpcaoDeVoto(req, res){
 }
 
 export async function registrarVoto(req, res){
-    res.status(200).send("Cheguei");
+    let idOpcao = req.params.id;
+    let voto = {"opcaoId": idOpcao , "registradoEm": "2022-05-19 00:00"};
+
+    const novoVoto = banco_dados.collection("votos").insertOne({...voto});
+    novoVoto.then(() => {
+        res.status(200).send("Voto registrado com sucesso");
+    });
+   novoVoto.catch(() => {
+       res.send("Erro ao registrar voto");
+   });
 }

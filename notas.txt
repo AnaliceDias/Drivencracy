@@ -1,16 +1,16 @@
 dúvidas:
+- Como inserir dados em documentos armazenados no mongo?
 - como realizar cálculos com milissegundos? E como converter os milisegundos para formato de data?
 - pq qnd uso await não funciona? só qnd não uso
 
-problemas:
-- erros persistentes no console
-- Problemas para fazer validação da data
-
+- Será que eu deveria registar os novos votos dentro das opções de voto?
 =================================
 Para o próximo PPP:
 
 Progresso: 
-- Validação de título vazio e título repetido para cadastro de novas opções de voto
+- Validações de título vazio e título repetido para cadastro de novas opções de voto
+- Validação de opção existente para votar
+- Registro de novos votos
 
 Problemas: 
 Quando faço requisição para procurar algo que não existe no banco de dados, ao invés de retornar um erro, a requisição fica numa busca eterna
@@ -21,6 +21,8 @@ Planejamento:
 ================================
 Para os testes:
 id da primeira enquete: 6284630a452633b8d1e093a8
+
+formato dos votos: {"opcaoId": "62864f75a2959224ff820ac5", "registradoEm": "2022-05-19 15:51"}
 
 
 ================================

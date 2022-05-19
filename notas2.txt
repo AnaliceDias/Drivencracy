@@ -2,5 +2,23 @@
 [x] Get /poll : Não precisa de validações
 [x] Post /choice : [x] Validação título vazio / [x] Validação título repetido / [x] Validação enquete deve existir / [ ] Validação expiração da enquete
 [x] Get /poll/:id/choice : Não precisa de validação
-[y] Post /choice/:id/vote : [ ] Validação existência da opção de voto / [ ] Validação expiração da enquete / [ ] Registrar o horário de envio
-[ ] Get /poll/:id/result : Não precisa de validação
+[x] Post /choice/:id/vote : [x] Validação existência da opção de voto / [ ] Validação expiração da enquete / [ ] Registrar o horário de envio
+[y] Get /poll/:id/result : Não precisa de validação
+
+
+
+
+
+
+
+
+
+Para retornar o resultado das enquetes
+
+- verificar se enquete existe
+- buscar todas as opções de voto
+- filtrar as que correspondem ao id da enquete solicitada
+- buscar todos os votos
+- filtrar os que correspondem às opções filtradas
+- Contar os votos de cada opção
+- Retornar a opção com maior número de votos (no formato sugerido)

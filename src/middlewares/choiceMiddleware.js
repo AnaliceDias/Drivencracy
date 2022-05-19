@@ -37,11 +37,12 @@ export async function validarExistenciaDaOpcao(req, res, next){
     let idOpcao = req.params.id;
         
     const opcaoDeVoto = banco_dados.collection("opcoes_de_voto").findOne({_id: ObjectID (idOpcao)});
-    opcaoDeVoto.then((r) => {
+    opcaoDeVoto.then(() => {
+        //chamar função que verifica se enquete já expirou
         next();
     });
     opcaoDeVoto.catch(() => {
-        res.status(404);
+        res.status(404).send("Erro ao registrar voto");
     });
 
 }
