@@ -8,9 +8,6 @@ export async function validaTitulo(req, res, next){
 }
 
 export async function validaExpireAt(req, res, next){
-     
-    let expireAt = "2021-05-01 00:05";
-    // req.body.expireAt = expireAt;
-
+    let expireAt = req.body.expireAt;
     next();
 }

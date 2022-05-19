@@ -4,19 +4,29 @@ const { banco_dados } = await connectMongoDB();
 
 
 export async function cadastrarEnquete(req, res){
-    const enquete = req.body;
-    
+    const enquete = { ...req.body};
+    //enquete.expireAt = res.locals.expireAt;
+        
     const inserirEnquetes = banco_dados.collection("enquetes").insertOne(enquete);
-    inserirEnquetes.then((r) => {
+    inserirEnquetes.then((r) => { 
         res.status(201).send("Enquete cadastrada com sucesso");
-    })
-    const buscarEnquetes =  banco_dados.collection("enquetes").find({}).toArray();
-    buscarEnquetes.then((r) => {
-        console.log(r);
-    })
-    res.send("OK_GET");
+    });
+    inserirEnquetes.catch((r) => {
+        res.status(404).send("Erro ao tentar cadastrar sua enquete");
+    });
 }
 
-export function postPolls(req, res){
+export async function solicitarEnquetes(req, res){
+    const pesquisarEnquetes = banco_dados.collection("enquetes").find({}).toArray();
+
+    pesquisarEnquetes.then((r) => {
+        res.send(r);
+    });
+    pesquisarEnquetes.catch((r) => {
+        res.send("Erro ao solicitar enquetes.")
+    })
+}
+
+export async function postPolls(req, res){
     res.send("OK_POST");
 }
