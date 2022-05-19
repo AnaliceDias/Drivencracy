@@ -1,0 +1,28 @@
+dúvidas:
+- como realizar cálculos com milissegundos? E como converter os milisegundos para formato de data?
+- pq qnd uso await não funciona? só qnd não uso
+
+problemas:
+- erros persistentes no console
+- Problemas para fazer validação da data
+
+=================================
+Para o próximo PPP:
+
+Progresso: Cadastro novas enquetes (com validação se o títuto não está vazio)  // Cadastro de novas opções de voto (sem validações) // Solicitação da lista de todas as enquetes // Solicitação da lista de opções de voto de uma enquete específica
+
+Problemas: Dificuldade em fazer a validação da data de expiração das enquetes // percebi que qnd uso await antes das requisições pro banco de dados a aplicação buga kk mas funciona normal quando não uso. Fiquei na dúvida do pq, já que no exemplo que vc mandou a requisição era feita com um await na frente
+
+Planejamento: 
+Concluir os controllers de solicitação e cadastro sem validações
+Aplicar as validações necessárias para o cadastro de novas enquetes, novas opções de votos e novos votos
+
+================================
+Para os testes:
+id da primeira enquete: 6284630a452633b8d1e093a8
+
+
+================================
+Notas:
+
+- para pesquisar apenas um item: findOne({pollId: ObjectID (idEnquete)}) // { ObjectID } é importado de "bson"

@@ -1,0 +1,6 @@
+[x] Post /poll : [x] Validação título vazio / [ ] Validação data de expiração
+[x] Get /poll : Não precisa de validações
+[x] Post /choice : [ ] Validação título vazio / [ ] Validação título repetido / [ ] Validação expiração da enquete
+[x] Get /poll/:id/choice : Não precisa de validação
+[ ] Post /choice/:id/vote : [ ] Validação existência da opção de voto / [ ] Validação expiração da enquete / [ ] Registrar o horário de envio
+[ ] Get /poll/:id/result : Não precisa de validação
