@@ -1,9 +1,8 @@
 import { Router } from "express";
-import {getChoice, postChoice} from "../../controllers/choiceController.js";
+import {criarOpcaoDeVoto} from "../../controllers/choiceController.js";
 
 const choiceRouter = Router();
 
-choiceRouter.post("/choice" , postChoice);
-choiceRouter.get("/choice/:id/vote" , getChoice); 
+choiceRouter.post("/choice" , criarOpcaoDeVoto);
 
 export default choiceRouter;

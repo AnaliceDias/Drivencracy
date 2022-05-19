@@ -1,7 +1,16 @@
-export function postChoice(req, res){
-    res.send("OK_POST");
-}
+import connectMongoDB from "../../mongoConection.js";
 
-export function getChoice(req, res) {
-    res.send("OK_GET");
+const { banco_dados } = await connectMongoDB();
+
+export async function criarOpcaoDeVoto(req, res){
+    const opcaoDeVoto = { ...req.body};
+    
+    const inserirOpcaoDeVoto =  banco_dados.collection("opcoes_de_voto").insertOne(opcaoDeVoto);
+    inserirOpcaoDeVoto.then((r) => { 
+        res.status(201).send("Opção de voto cadastrada com sucesso");
+    });
+    inserirOpcaoDeVoto.catch((r) => {
+        res.status(404).send("Erro ao tentar cadastrar nova opção de voto");
+    });
+
 }

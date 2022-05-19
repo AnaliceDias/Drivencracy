@@ -1,4 +1,4 @@
-export async function validaTitulo(req, res, next){
+export async function validarTitulo(req, res, next){
     const titulo = req.body.title;
     
     if(titulo === ""){
@@ -7,7 +7,7 @@ export async function validaTitulo(req, res, next){
     next();
 }
 
-export async function validaExpireAt(req, res, next){
+export async function validarExpireAt(req, res, next){
     let expireAt = req.body.expireAt;
     next();
 }
