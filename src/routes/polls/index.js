@@ -1,7 +1,8 @@
 //Configurações das rotas de poll
 import { Router } from "express";
 import { cadastrarEnquete, solicitarEnquetes, solicitarOpcoesDeVotos } from "../../controllers/pollsController.js";
-import { validarExpireAt, validarTitulo } from "../../middlewares/pollMiddleware.js";
+import { validarTitulo } from "../../middlewares/middleware.js";
+import { validarExpireAt } from "../../middlewares/pollMiddleware.js";
 
 const pollsRouter = Router();
 

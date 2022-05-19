@@ -27,11 +27,10 @@ export async function solicitarEnquetes(req, res){
 }
 
 export async function solicitarOpcoesDeVotos(req, res){
-   let idEnquete = req.params.id;
-   let todasOpcoesDeVoto = [];
-   let opcoesDeVotodaEnquete = [];
-    //Fazer uma requisição para buscar todas as opções
-    //Depois filtrar para separar apenas aquelas correspondentes ao pollId desejado
+    let idEnquete = req.params.id;
+    let todasOpcoesDeVoto = [];
+    let opcoesDeVotoDaEnquete = [];
+
     const opcoesDeVoto = banco_dados.collection("opcoes_de_voto").find({}).toArray();
 
     opcoesDeVoto.then((r) => {
@@ -39,10 +38,10 @@ export async function solicitarOpcoesDeVotos(req, res){
         
         todasOpcoesDeVoto.map((opcao) => {
             if(opcao.pollId === idEnquete){
-                opcoesDeVotodaEnquete.push({...opcao});
+                opcoesDeVotoDaEnquete.push({...opcao});
             }
         });
-        res.send(opcoesDeVotodaEnquete);
+        res.send(opcoesDeVotoDaEnquete);
     });
     opcoesDeVoto.catch((r) => {
         res.send("Erro ao solicitar opções de voto");

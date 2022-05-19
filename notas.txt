@@ -9,13 +9,14 @@ problemas:
 =================================
 Para o próximo PPP:
 
-Progresso: Cadastro novas enquetes (com validação se o títuto não está vazio)  // Cadastro de novas opções de voto (sem validações) // Solicitação da lista de todas as enquetes // Solicitação da lista de opções de voto de uma enquete específica
+Progresso: 
+- Validação de título vazio e título repetido para cadastro de novas opções de voto
 
-Problemas: Dificuldade em fazer a validação da data de expiração das enquetes // percebi que qnd uso await antes das requisições pro banco de dados a aplicação buga kk mas funciona normal quando não uso. Fiquei na dúvida do pq, já que no exemplo que vc mandou a requisição era feita com um await na frente
+Problemas: 
+Quando faço requisição para procurar algo que não existe no banco de dados, ao invés de retornar um erro, a requisição fica numa busca eterna
 
 Planejamento: 
-Concluir os controllers de solicitação e cadastro sem validações
-Aplicar as validações necessárias para o cadastro de novas enquetes, novas opções de votos e novos votos
+- Fazer deploy da aplicação
 
 ================================
 Para os testes:
