@@ -1,9 +1,8 @@
 dúvidas:
-- Como inserir dados em documentos armazenados no mongo?
-- como realizar cálculos com milissegundos? E como converter os milisegundos para formato de data?
-- pq qnd uso await não funciona? só qnd não uso
 
-- Será que eu deveria registar os novos votos dentro das opções de voto?
+
+- Ainda não utilizei schemas para as validações de middlewares
+- Não usei rejax
 =================================
 Para o próximo PPP:
 
@@ -11,9 +10,10 @@ Progresso:
 - Validações de título vazio e título repetido para cadastro de novas opções de voto
 - Validação de opção existente para votar
 - Registro de novos votos
+- Retornor do resultado das enquetes
 
 Problemas: 
-Quando faço requisição para procurar algo que não existe no banco de dados, ao invés de retornar um erro, a requisição fica numa busca eterna
+				| Quando faço requisição para procurar algo que não existe no banco de 					| dados, ao invés de retornar um erro, a requisição fica numa busca eterna
 
 Planejamento: 
 - Fazer deploy da aplicação
@@ -28,4 +28,4 @@ formato dos votos: {"opcaoId": "62864f75a2959224ff820ac5", "registradoEm": "2022
 ================================
 Notas:
 
-- para pesquisar apenas um item: findOne({pollId: ObjectID (idEnquete)}) // { ObjectID } é importado de "bson"
+- para pesquisar apenas um item: findOne({pollId: ObjectID (idEnquete)}) // { ObjectId } é importado de "mongodb" ou vc pode importar { ObjectID } de "bson"
