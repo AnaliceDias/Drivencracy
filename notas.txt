@@ -1,3 +1,7 @@
+Senha do adim do banco na nuvem: pFvdT8pbKoR7d8Zu
+
+user_admin LxDzyYtQpLOQM3DT
+mongodb://127.0.0.1:27017
 dúvidas:
 
 

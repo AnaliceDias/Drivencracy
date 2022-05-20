@@ -1,15 +1,11 @@
-[x] Post /poll : [x] Validação título vazio / [y] Validação data de expiração
+[x] Post /poll : [x] Validação título vazio / [x] Validação data de expiração (adiciona 30 dias)
 [x] Get /poll : Não precisa de validações
 [x] Post /choice : [x] Validação título vazio / [x] Validação título repetido / [x] Validação enquete deve existir / [ ] Validação expiração da enquete
 [x] Get /poll/:id/choice : Não precisa de validação
-[x] Post /choice/:id/vote : [x] Validação existência da opção de voto / [ ] Validação expiração da enquete / [ ] Registrar o horário de envio
+[x] Post /choice/:id/vote : [x] Validação existência da opção de voto / [ ] Validação expiração da enquete / [x] Registrar o horário de envio
 [x] Get /poll/:id/result : Não precisa de validação
 
-
-
-
-
-
+[ ] Validações de formato do body : [ ] Submissão de novas enquetes / [ ] Submissão de novas opções de voto
 
 
 
@@ -23,3 +19,5 @@ Para retornar o resultado das enquetes
 - Contar os votos de cada opção
 - Retornar a opção com maior número de votos (no formato sugerido)
 
+
+-> Possíveis motivos de bugs: mudei o local de import do objectId

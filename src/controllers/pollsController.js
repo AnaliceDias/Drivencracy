@@ -4,8 +4,7 @@ const { banco_dados } = await connectMongoDB();
 
 export async function cadastrarEnquete(req, res){
     const enquete = { ...req.body};
-    //enquete.expireAt = res.locals.expireAt;
-    
+        
     const inserirEnquetes =  banco_dados.collection("enquetes").insertOne(enquete);
     inserirEnquetes.then((r) => { 
         res.status(201).send("Enquete cadastrada com sucesso");
@@ -87,7 +86,7 @@ export async function verificarResultado(req, res){
         todosOsVotos.map((voto) => {
             for(let i =0; i < contagemDeVotos.length; i++){
                 
-                if(voto.opcaoId === contagemDeVotos[i].opcao.toString()){
+                if(voto.choiceId === contagemDeVotos[i].opcao.toString()){
                     contagemDeVotos[i].votos += 1;
                 }
             }

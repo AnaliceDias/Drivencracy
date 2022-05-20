@@ -1,5 +1,5 @@
 import connectMongoDB from "../../mongoConection.js";
-import { ObjectID } from "bson";
+import { ObjectId } from "mongodb";
 
 const { banco_dados } = await connectMongoDB();
 
@@ -35,10 +35,10 @@ export async function validarTituloUnico(req, res, next){
 
 export async function validarExistenciaDaOpcao(req, res, next){
     let idOpcao = req.params.id;
-        
-    const opcaoDeVoto = banco_dados.collection("opcoes_de_voto").findOne({_id: ObjectID (idOpcao)});
-    opcaoDeVoto.then(() => {
-        //chamar função que verifica se enquete já expirou
+    
+    const opcaoDeVoto = banco_dados.collection("opcoes_de_voto").findOne({_id: ObjectId (idOpcao)});
+    opcaoDeVoto.then((r) => {
+        res.locals.paraverificarExpiracao = r.pollId;
         next();
     });
     opcaoDeVoto.catch(() => {
